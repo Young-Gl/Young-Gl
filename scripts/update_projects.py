@@ -67,9 +67,25 @@ for i in range(0, len(repos), 2):
 
 block = f"{START}\n<table>\n" + "\n".join(rows) + f"\n</table>\n{END}"
 
+# ---- metrics line -------------------------------------------------------
+all_repos = api(f"/users/{USER}/repos?per_page=100&type=public")
+own = [r for r in all_repos if not r["fork"] and r["name"].lower() not in SKIP]
+stars = sum(r["stargazers_count"] for r in own)
+langs = {}
+for r in own:
+    if r.get("language"):
+        langs[r["language"]] = langs.get(r["language"], 0) + 1
+top_lang = max(langs, key=langs.get) if langs else "Swift"
+since = api(f"/users/{USER}")["created_at"][:4]
+n = len(own)
+metrics = (f"{n} public repositor{'y' if n == 1 else 'ies'} &nbsp;·&nbsp; "
+           f"{stars} star{'s' if stars != 1 else ''} &nbsp;·&nbsp; "
+           f"{top_lang} &nbsp;·&nbsp; since {since}")
+
 src = open(README, encoding="utf-8").read()
 if START not in src or END not in src:
     raise SystemExit("markers not found in README")
 new = re.sub(re.escape(START) + r".*?" + re.escape(END), block, src, flags=re.S)
+new = new.replace("<!-- METRICS -->", metrics)
 open(README, "w", encoding="utf-8").write(new)
 print(f"updated with {len(repos)} project(s)")

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.gif" alt="Young — macOS tools" width="100%">
+  <img src="assets/banner.gif" alt="Young — small tools for macOS" width="100%">
 </p>
 
 <h1 align="center">Young</h1>
@@ -11,9 +11,37 @@
 <br>
 
 <p align="center">
-  I build small, native tools that replace a shell script with a button.<br>
-  No accounts. No telemetry. Nothing you didn't ask for.
+  <i>Most of what a computer does is invisible — until it fails.</i><br>
+  <sub>I build small tools that make those parts legible: watts, batteries, backups.<br>
+  Before they break, not after.</sub>
 </p>
+
+<br>
+
+---
+
+<br>
+
+### Notes on practice
+
+<sub>
+
+**Legibility.** James C. Scott showed that institutions simplify the world in order to see it.
+Software does the same to hardware. A menu bar reading `12.4 W` is a legible rendering of a
+power state that was always there — merely unreadable.
+
+<br><br>
+
+**Conviviality.** Ivan Illich argued that tools should enlarge autonomy rather than manufacture
+dependence. No accounts, no telemetry, no subscription. A tool you can walk away from is a tool
+that respects you.
+
+<br><br>
+
+**Calm.** Mark Weiser's calm technology lives at the periphery: present when glanceable, silent
+otherwise. A menu bar item is a better interface than a dashboard.
+
+</sub>
 
 <br>
 
@@ -29,7 +57,7 @@
     <td width="50%" valign="top">
       <h4><a href="https://github.com/Young-Gl/Fluxa-Mac">Fluxa</a></h4>
       <p><sub>Native Mac power readings and device batteries, with desktop widgets</sub></p>
-      <p><sub><a href="https://github.com/Young-Gl/Fluxa-Mac">Repository</a> · ★ 1</sub></p>
+      <p><sub><a href="https://github.com/Young-Gl/Fluxa-Mac">Repository</a> &nbsp;·&nbsp; <a href="https://github.com/Young-Gl/Fluxa-Mac/releases/latest">Download</a> · ★ 1</sub></p>
     </td>
     <td width="50%" valign="top">
       <h4><a href="https://github.com/Young-Gl/backup-control">Backup Control</a></h4>
@@ -46,18 +74,31 @@
 
 <br>
 
-### Principles
+### Readings
 
 <sub>
-— <b>Native, always.</b> SwiftUI and AppKit. No Electron shells.<br>
-— <b>Offline by default.</b> If it doesn't need a server, it doesn't get one.<br>
-— <b>Small surface.</b> One job, done properly, then left alone.
+Illich, I. — <i>Tools for Conviviality</i> (1973)<br>
+Scott, J. C. — <i>Seeing Like a State</i> (1998)<br>
+Weiser, M. — <i>The Computer for the 21st Century</i> (1991)<br>
+Star, S. L. — <i>The Ethnography of Infrastructure</i> (1999)<br>
+Doctorow, C. — <i>The Internet Con</i> (2023)
 </sub>
 
 <br>
 
 ---
 
+<br>
+
+### Colophon
+
 <p align="center">
-  <sub>Built in Swift · macOS 14+ · <a href="https://github.com/Young-Gl">github.com/Young-Gl</a></sub>
+  <sub>2 public repositories &nbsp;·&nbsp; 2 stars &nbsp;·&nbsp; Swift &nbsp;·&nbsp; since 2020</sub>
 </p>
+
+<p align="center">
+  <sub>Written in Swift. This page is assembled by a GitHub Action from public repository data —<br>
+  no third-party badges, no tracking pixels, no analytics.</sub>
+</p>
+
+<br>
