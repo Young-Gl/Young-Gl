@@ -20,6 +20,13 @@ Small tools for macOS, and notes on the side.
   </picture>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/fig-front-dark.png">
+    <img src="assets/fig-front-light.png" alt="A dashed back stage, a solid front stage, and an audience" width="62%">
+  </picture>
+</p>
+
 » Reading — Illich, *Tools for Conviviality*; Scott, *Seeing Like a State*; Weiser, *The Computer for the 21st Century*; Star, *The Ethnography of Infrastructure*
 
 **Marginalia**
