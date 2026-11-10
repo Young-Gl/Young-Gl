@@ -1,6 +1,6 @@
 # Notes
 
-<sub>Short pieces on tools, time and legibility.</sub>
+<sub>Short pieces, mostly sociology.</sub>
 
 - **2026-11-10** — [礼物 · The Gift](2026-11-10-gift.md) — 谢谢是语言的,回礼是行动的。
 - **2026-11-10** — [弱连接 · Weak Ties](2026-11-10-weak-ties.md) — 真正带来机会的,往往是那些一年说不上几句话的人。

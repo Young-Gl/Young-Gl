@@ -112,7 +112,7 @@ top_notes = entries[:3]
 notes_block = " · ".join(note_line(m, f) for m, f in top_notes) or "_No notes yet._"
 
 # essays index
-index = ["# Notes\n", "<sub>Short pieces on tools, time and legibility.</sub>\n"]
+index = ["# Notes\n", "<sub>Short pieces, mostly sociology.</sub>\n"]
 for meta, path in entries:
     index.append(f'- **{meta.get("date","")}** — [{meta.get("title","Untitled")}]'
                  f'({path.split("/")[-1]}) — {meta.get("summary","")}')
