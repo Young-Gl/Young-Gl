@@ -1,6 +1,6 @@
 ### Lumen
 
-I make small tools for macOS. Everything else here is notes.
+I make small tools for macOS. I read sociology and write down what sticks.
 
 > The first wisdom of sociology is this — things are not what they seem.
 > <sub>Peter L. Berger, <i>Invitation to Sociology</i> (1963)</sub>
@@ -26,6 +26,13 @@ I make small tools for macOS. Everything else here is notes.
 - Scott, *Seeing Like a State* (1998)
 - Weiser, *The Computer for the 21st Century* (1991)
 - Star, *The Ethnography of Infrastructure* (1999)
+
+**Blogroll**
+
+- [orgtheory.net](http://orgtheory.net) — a group blog that has been arguing about sociology since 2006
+- [Crooked Timber](https://crookedtimber.org) — the long-running seminar that never adjourns
+- [Scatterplot](https://scatterplot.blog) — sociology of culture, mostly music and data
+- [kieranhealy.org](https://kieranhealy.org) — the layout this page steals from
 
 ---
 
