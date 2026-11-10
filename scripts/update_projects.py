@@ -117,8 +117,8 @@ def note_line(meta, path):
     title = meta.get("title", "Untitled")
     date = meta.get("date", "")
     summary = meta.get("summary", "")
-    return (f'<sub><a href="{path}"><b>{title}</b></a> &nbsp;—&nbsp; {summary}'
-            f' &nbsp;<span style="opacity:.5">{date}</span></sub>')
+    return (f'<sub><a href="{path}"><b>{title}</b></a>'
+            f' &nbsp;&nbsp;<span style="opacity:.45">{date}</span></sub>')
 
 top_notes = entries[:3]
 notes_block = "<br>\n".join(note_line(m, f) for m, f in top_notes) or "<sub>No notes yet.</sub>"
