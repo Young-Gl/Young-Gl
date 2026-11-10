@@ -22,26 +22,13 @@
 
 <br>
 
-### Notes on practice
+### About
 
-<sub>
+<sub>I write small macOS utilities. Two of them are below; the rest of this page is mostly notes to myself.
 
-**Legibility.** James C. Scott showed that institutions simplify the world in order to see it.
-Software does the same to hardware. A menu bar reading `12.4 W` is a legible rendering of a
-power state that was always there — merely unreadable.
+A few ideas keep coming back. James Scott's <i>legibility</i> — an institution has to simplify what it governs, and software does the same to hardware. Ivan Illich's <i>convivial tools</i> — a tool shouldn't require you to belong to it. Mark Weiser's <i>calm technology</i> — the best interface is one you glance at and forget.
 
-<br><br>
-
-**Conviviality.** Ivan Illich argued that tools should enlarge autonomy rather than manufacture
-dependence. No accounts, no telemetry, no subscription. A tool you can walk away from is a tool
-that respects you.
-
-<br><br>
-
-**Calm.** Mark Weiser's calm technology lives at the periphery: present when glanceable, silent
-otherwise. A menu bar item is a better interface than a dashboard.
-
-</sub>
+I'm not sure a menu bar app can carry ideas that large. But they are useful for deciding what <i>not</i> to build.</sub>
 
 <br>
 
@@ -67,6 +54,28 @@ otherwise. A menu bar item is a better interface than a dashboard.
   </tr>
 </table>
 <!-- PROJECTS:END -->
+
+<br>
+
+---
+
+<br>
+
+### Notes
+
+<sub>Occasional notes on tools, time and legibility.</sub>
+
+<br>
+
+<!-- NOTES:START -->
+<sub><a href="essays/2026-11-10-legibility.md"><b>知道一点点 · Knowing a Little</b></a> &nbsp;—&nbsp; 从完全不知道,变成知道一点点。 &nbsp;<span style="opacity:.5">2026-11-10</span></sub><br>
+<sub><a href="essays/2026-11-10-politeness.md"><b>不做的理由 · What I Don't Build</b></a> &nbsp;—&nbsp; 有些功能不做,是因为做起来太麻烦。 &nbsp;<span style="opacity:.5">2026-11-09</span></sub><br>
+<sub><a href="essays/2026-11-10-time.md"><b>六个月 · Six Months</b></a> &nbsp;—&nbsp; 备份没有让时间停下来,只是把彻底失去往后推。 &nbsp;<span style="opacity:.5">2026-11-08</span></sub>
+<!-- NOTES:END -->
+
+<br>
+
+<p align="right"><sub><a href="essays/">All notes →</a></sub></p>
 
 <br>
 
