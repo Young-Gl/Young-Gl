@@ -26,9 +26,7 @@
 
 <sub>I write small macOS utilities. Two of them are below; the rest of this page is mostly notes to myself.
 
-A few ideas keep coming back. James Scott's <i>legibility</i> — an institution has to simplify what it governs, and software does the same to hardware. Ivan Illich's <i>convivial tools</i> — a tool shouldn't require you to belong to it. Mark Weiser's <i>calm technology</i> — the best interface is one you glance at and forget.
-
-I'm not sure a menu bar app can carry ideas that large. But they are useful for deciding what <i>not</i> to build.</sub>
+I read a fair amount of sociology and anthropology. Some of it ends up in the notes — not as argument, just as things I keep thinking about.</sub>
 
 <br>
 
@@ -68,9 +66,9 @@ I'm not sure a menu bar app can carry ideas that large. But they are useful for 
 <br>
 
 <!-- NOTES:START -->
-<sub><a href="essays/2026-11-10-legibility.md"><b>知道一点点 · Knowing a Little</b></a> &nbsp;—&nbsp; 从完全不知道,变成知道一点点。 &nbsp;<span style="opacity:.5">2026-11-10</span></sub><br>
-<sub><a href="essays/2026-11-10-politeness.md"><b>不做的理由 · What I Don't Build</b></a> &nbsp;—&nbsp; 有些功能不做,是因为做起来太麻烦。 &nbsp;<span style="opacity:.5">2026-11-09</span></sub><br>
-<sub><a href="essays/2026-11-10-time.md"><b>六个月 · Six Months</b></a> &nbsp;—&nbsp; 备份没有让时间停下来,只是把彻底失去往后推。 &nbsp;<span style="opacity:.5">2026-11-08</span></sub>
+<sub><a href="essays/2026-11-10-weak-ties.md"><b>弱连接 · Weak Ties</b></a> &nbsp;—&nbsp; 真正带来机会的,往往是那些一年说不上几句话的人。 &nbsp;<span style="opacity:.5">2026-11-10</span></sub><br>
+<sub><a href="essays/2026-11-10-neighbourhood.md"><b>附近 · The Neighbourhood</b></a> &nbsp;—&nbsp; 我们理解世界,却不认识楼下。 &nbsp;<span style="opacity:.5">2026-11-09</span></sub><br>
+<sub><a href="essays/2026-11-10-front-stage.md"><b>前台 · Front Stage</b></a> &nbsp;—&nbsp; 后台越来越难找,所以我们把化妆也搬到了台上。 &nbsp;<span style="opacity:.5">2026-11-08</span></sub>
 <!-- NOTES:END -->
 
 <br>
