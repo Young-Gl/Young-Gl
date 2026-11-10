@@ -52,30 +52,20 @@ def card(r):
     url = r["html_url"]
     desc = (r["description"] or "").strip()
     desc = desc.split("。")[0].split(". ")[0]
-    if len(desc) > 130:
-        desc = desc[:127] + "…"
-    links = [f'<a href="{url}">Repository</a>']
+    if len(desc) > 120:
+        desc = desc[:117] + "…"
+    tail = []
+    if r.get("language"):
+        tail.append(r["language"])
     if has_release(name):
-        links.append(f'<a href="{url}/releases/latest">Download</a>')
-    meta = f'<sub>⌘ {r["language"]}</sub>' if r.get("language") else ""
-    stars = f' · ★ {r["stargazers_count"]}' if r["stargazers_count"] else ""
-    return (
-        '    <td width="50%" valign="top">\n'
-        f'      <h4><a href="{url}">{label}</a></h4>\n'
-        f'      <p><sub>{desc}</sub></p>\n'
-        f'      <p><sub>{" &nbsp;·&nbsp; ".join(links)}{stars}</sub></p>\n'
-        '    </td>'
-    )
+        tail.append(f"[Download]({url}/releases/latest)")
+    if r["stargazers_count"]:
+        tail.append(f"★ {r['stargazers_count']}")
+    meta = (" · " + " · ".join(tail)) if tail else ""
+    return f"**[{label}]({url})** — {desc}{meta}"
 
-rows = []
-for i in range(0, len(repos), 2):
-    pair = repos[i:i+2]
-    cells = [card(r) for r in pair]
-    if len(cells) == 1:
-        cells.append('    <td width="50%" valign="top"></td>')
-    rows.append("  <tr>\n" + "\n".join(cells) + "\n  </tr>")
-
-block = f"{START}\n<table>\n" + "\n".join(rows) + f"\n</table>\n{END}"
+items = [card(r) for r in repos]
+block = f"{START}\n" + "\n\n".join(items) + f"\n{END}"
 
 # ---- metrics line -------------------------------------------------------
 all_repos = api(f"/users/{USER}/repos?per_page=100&type=public")
@@ -91,9 +81,9 @@ try:
 except Exception:
     since = "2020"
 n = len(own)
-metrics = (f"{n} public repositor{'y' if n == 1 else 'ies'} &nbsp;·&nbsp; "
-           f"{stars} star{'s' if stars != 1 else ''} &nbsp;·&nbsp; "
-           f"{top_lang} &nbsp;·&nbsp; since {since}")
+metrics = (f"{n} public repositor{'y' if n == 1 else 'ies'} · "
+           f"{stars} star{'s' if stars != 1 else ''} · "
+           f"{top_lang} · since {since}")
 
 # ---- notes section ------------------------------------------------------
 import glob
@@ -117,11 +107,10 @@ def note_line(meta, path):
     title = meta.get("title", "Untitled")
     date = meta.get("date", "")
     summary = meta.get("summary", "")
-    return (f'<sub><a href="{path}"><b>{title}</b></a>'
-            f' &nbsp;&nbsp;<span style="opacity:.45">{date}</span></sub>')
+    return f'- [{title}]({path}) — {date}'
 
 top_notes = entries[:3]
-notes_block = "<br>\n".join(note_line(m, f) for m, f in top_notes) or "<sub>No notes yet.</sub>"
+notes_block = "\n".join(note_line(m, f) for m, f in top_notes) or "_No notes yet._"
 
 # essays index
 index = ["# Notes\n", "<sub>Short pieces on tools, time and legibility.</sub>\n"]
