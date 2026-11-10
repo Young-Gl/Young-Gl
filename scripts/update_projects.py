@@ -62,10 +62,10 @@ def card(r):
     if r["stargazers_count"]:
         tail.append(f"★ {r['stargazers_count']}")
     meta = (" · " + " · ".join(tail)) if tail else ""
-    return f"**[{label}]({url})** — {desc}{meta}"
+    return f"- **[{label}]({url})** — {desc}{meta}"
 
 items = [card(r) for r in repos]
-block = f"{START}\n" + "\n\n".join(items) + f"\n{END}"
+block = f"{START}\n" + "\n".join(items) + f"\n{END}"
 
 # ---- metrics line -------------------------------------------------------
 all_repos = api(f"/users/{USER}/repos?per_page=100&type=public")
@@ -107,7 +107,7 @@ def note_line(meta, path):
     title = meta.get("title", "Untitled")
     date = meta.get("date", "")
     summary = meta.get("summary", "")
-    return f'- [{title}]({path}) — {date}'
+    return f'- *{date}* — [{title}]({path})'
 
 top_notes = entries[:3]
 notes_block = "\n".join(note_line(m, f) for m, f in top_notes) or "_No notes yet._"
