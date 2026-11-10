@@ -1,11 +1,8 @@
 <p align="center">
-  <img src="assets/banner.gif" alt="Young — small tools for macOS" width="100%">
-</p>
-
-<h1 align="center">Young</h1>
-
-<p align="center">
-  <sub>I N D E P E N D E N T &nbsp; D E V E L O P E R &nbsp; · &nbsp; m a c O S &nbsp; · &nbsp; S w i f t U I</sub>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
+    <img src="assets/banner-light.png" alt="Lumen" width="100%">
+  </picture>
 </p>
 
 <br>
