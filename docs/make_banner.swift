@@ -65,7 +65,7 @@ func mono(_ text: String, x: CGFloat, y: CGFloat, size: CGFloat, color: NSColor)
     ]).draw(at: NSPoint(x: x, y: y))
 }
 
-mono("FIELD NOTES / 2019 —", x: stripW + 48, y: 104, size: 11, color: meta)
+mono("FIELD NOTES / 2020 —", x: stripW + 48, y: 104, size: 11, color: meta)
 mono("01  macOS TOOLS", x: stripW + 48, y: 84, size: 11, color: meta)
 mono("02  ENCRYPTED BACKUP", x: stripW + 48, y: 64, size: 11, color: meta)
 
