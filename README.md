@@ -1,23 +1,17 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <img src="assets/banner-light.png" alt="Lumen" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.jpg">
+    <img src="assets/banner-light.jpg" alt="Lumen" width="100%">
   </picture>
 </p>
 
-<br>
-
 <p align="center">
-  <sub>Small tools for macOS, and notes on the side.</sub>
+  <sub>Field notes on software, time, and the nearby.</sub>
 </p>
 
 <br>
 
----
-
-<br>
-
-### Work
+### 01 · Work
 
 <!-- PROJECTS:START -->
 <table>
@@ -38,11 +32,7 @@
 
 <br>
 
----
-
-<br>
-
-### Notes
+### 02 · Notes
 
 <!-- NOTES:START -->
 <sub><a href="essays/2026-11-10-weak-ties.md"><b>弱连接 · Weak Ties</b></a> &nbsp;&nbsp;<span style="opacity:.45">2026-11-10</span></sub><br>
@@ -50,17 +40,11 @@
 <sub><a href="essays/2026-11-10-front-stage.md"><b>前台 · Front Stage</b></a> &nbsp;&nbsp;<span style="opacity:.45">2026-11-08</span></sub>
 <!-- NOTES:END -->
 
-<br>
-
 <p align="right"><sub><a href="essays/">All notes →</a></sub></p>
 
 <br>
 
----
-
-<br>
-
-### Readings
+### 03 · Readings
 
 <sub>
 Illich, I. — <i>Tools for Conviviality</i> (1973)<br>
@@ -73,8 +57,6 @@ Star, S. L. — <i>The Ethnography of Infrastructure</i> (1999)
 
 ---
 
-<br>
-
 <p align="center">
-  <sub>2 public repositories &nbsp;·&nbsp; 2 stars &nbsp;·&nbsp; Swift &nbsp;·&nbsp; since 2020</sub>
+  <sub><code>COLOPHON</code> &nbsp; 2 public repositories &nbsp;·&nbsp; 2 stars &nbsp;·&nbsp; Swift &nbsp;·&nbsp; since 2020 &nbsp; · &nbsp; assembled from repository data</sub>
 </p>

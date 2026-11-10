@@ -4,7 +4,7 @@ let mode = CommandLine.arguments.count > 2 ? CommandLine.arguments[2] : "light"
 let isDark = mode == "dark"
 let NAME = CommandLine.arguments.count > 3 ? CommandLine.arguments[3] : "Lumen"
 
-let W: CGFloat = 1200, H: CGFloat = 300
+let W: CGFloat = 1200, H: CGFloat = 320
 let img = NSImage(size: NSSize(width: W, height: H))
 img.lockFocus()
 
@@ -12,52 +12,69 @@ func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat) -> NSColor {
     NSColor(srgbRed: r/255, green: g/255, blue: b/255, alpha: 1)
 }
 
-let paper = isDark ? rgb(12, 12, 14) : rgb(247, 246, 243)
-let ink   = isDark ? rgb(242, 241, 237) : rgb(17, 17, 17)
-let faint = isDark ? rgb(110, 110, 116) : rgb(122, 120, 116)
+let paper = isDark ? rgb(14, 14, 15) : rgb(244, 243, 239)
+let ink   = isDark ? rgb(239, 238, 233) : rgb(18, 18, 18)
+let meta  = isDark ? rgb(128, 128, 124) : rgb(120, 118, 112)
+let accent = isDark ? rgb(150, 168, 140) : rgb(86, 104, 76)
 
 paper.setFill()
 NSRect(x: 0, y: 0, width: W, height: H).fill()
 
-// hairline top + bottom
-faint.withAlphaComponent(0.25).setFill()
-NSBezierPath(rect: NSRect(x: 0, y: H - 1, width: W, height: 1)).fill()
-NSBezierPath(rect: NSRect(x: 0, y: 0, width: W, height: 1)).fill()
-
-// name — serif, tightly tracked
-let nameFont = NSFont(name: "Georgia", size: 104) ?? NSFont.systemFont(ofSize: 104, weight: .regular)
-NSAttributedString(string: NAME, attributes: [
-    .font: nameFont,
-    .foregroundColor: ink,
-    .kern: -1.5
-]).draw(at: NSPoint(x: 78, y: 108))
-
-// small caps line
-NSAttributedString(string: "M A C O S   T O O L S", attributes: [
-    .font: NSFont.systemFont(ofSize: 10.5, weight: .regular),
-    .foregroundColor: faint,
-    .kern: 1.2
-]).draw(at: NSPoint(x: 82, y: 70))
-
-// right column: index + year
-let right = [
-    ("01 — FLUXA", 132.0),
-    ("02 — BACKUP CONTROL", 108.0),
-]
-for (text, y) in right {
-    let a = NSAttributedString(string: text, attributes: [
-        .font: NSFont.systemFont(ofSize: 10, weight: .regular),
-        .foregroundColor: faint,
-        .kern: 1.4
-    ])
-    a.draw(at: NSPoint(x: W - 80 - a.size().width, y: y))
+// ---- portrait strip (left) ----
+let stripW: CGFloat = 430
+if let photo = NSImage(contentsOfFile: "assets/portrait.jpg") ?? NSImage(contentsOfFile: "assets/portrait.png") {
+    let rect = NSRect(x: 0, y: 0, width: stripW, height: H)
+    let iw = photo.size.width, ih = photo.size.height
+    let scale = max(rect.width / iw, rect.height / ih)
+    let dw = iw * scale, dh = ih * scale
+    let drawRect = NSRect(x: rect.midX - dw/2, y: rect.midY - dh/2, width: dw, height: dh)
+    NSGraphicsContext.saveGraphicsState()
+    NSBezierPath(rect: rect).addClip()
+    photo.draw(in: drawRect)
+    // desaturate + tone
+    (isDark ? rgb(10,12,10) : rgb(244,243,239)).withAlphaComponent(isDark ? 0.35 : 0.22).setFill()
+    rect.fill()
+    // fade into paper
+    let fadeW: CGFloat = 110
+    let g = NSGradient(colors: [paper.withAlphaComponent(0), paper.withAlphaComponent(1)])!
+    g.draw(in: NSRect(x: stripW - fadeW, y: 0, width: fadeW, height: H), angle: 0)
+    NSGraphicsContext.restoreGraphicsState()
 }
 
-NSAttributedString(string: "EST. 2020", attributes: [
-    .font: NSFont.systemFont(ofSize: 10, weight: .regular),
-    .foregroundColor: faint.withAlphaComponent(0.8),
-    .kern: 1.4
-]).draw(at: NSPoint(x: W - 80 - NSAttributedString(string: "EST. 2020", attributes: [.font: NSFont.systemFont(ofSize: 10)]).size().width, y: 70))
+// frame
+meta.withAlphaComponent(0.28).setStroke()
+let frame = NSBezierPath(rect: NSRect(x: 0.5, y: 0.5, width: W - 1, height: H - 1))
+frame.lineWidth = 1
+frame.stroke()
+
+// ---- name ----
+let nameFont = NSFont(name: "Georgia", size: 96) ?? NSFont.systemFont(ofSize: 96)
+NSAttributedString(string: NAME, attributes: [
+    .font: nameFont, .foregroundColor: ink, .kern: -1.5
+]).draw(at: NSPoint(x: stripW + 46, y: 150))
+
+// rule under name
+accent.withAlphaComponent(0.9).setFill()
+NSBezierPath(rect: NSRect(x: stripW + 48, y: 132, width: 92, height: 2)).fill()
+
+// meta lines (monospace)
+func mono(_ text: String, x: CGFloat, y: CGFloat, size: CGFloat, color: NSColor) {
+    NSAttributedString(string: text, attributes: [
+        .font: NSFont.monospacedSystemFont(ofSize: size, weight: .regular),
+        .foregroundColor: color, .kern: 0.8
+    ]).draw(at: NSPoint(x: x, y: y))
+}
+
+mono("FIELD NOTES / 2019 —", x: stripW + 48, y: 104, size: 11, color: meta)
+mono("01  macOS TOOLS", x: stripW + 48, y: 84, size: 11, color: meta)
+mono("02  ENCRYPTED BACKUP", x: stripW + 48, y: 64, size: 11, color: meta)
+
+// right corner index
+let idx = NSAttributedString(string: "LUMEN-001", attributes: [
+    .font: NSFont.monospacedSystemFont(ofSize: 10, weight: .regular),
+    .foregroundColor: meta.withAlphaComponent(0.75), .kern: 1.2
+])
+idx.draw(at: NSPoint(x: W - 40 - idx.size().width, y: H - 34))
 
 img.unlockFocus()
 
