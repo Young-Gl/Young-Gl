@@ -4,6 +4,13 @@ date: 2026-11-09
 summary: 我们理解世界,却不认识楼下。
 ---
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="../assets/fig-nearby-dark.png">
+    <img src="../assets/fig-nearby-light.png" alt="Three concentric circles: world, a fading nearby, family" width="92%">
+  </picture>
+</p>
+
 我在这个小区住了三年。我知道外卖平台上有二十七家店能在四十分钟内送到,但不知道楼下那家面馆几点关门。
 
 项飙把这种现象叫作「附近的消失」:人能够理解很大的世界(通过手机),也能理解很小的家庭,但中间那一层——邻里、街角、菜市场——正在变薄。
