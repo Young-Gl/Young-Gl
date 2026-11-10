@@ -61,11 +61,10 @@ def card(r):
         tail.append(f"[Download]({url}/releases/latest)")
     if r["stargazers_count"]:
         tail.append(f"★ {r['stargazers_count']}")
-    meta = (" · " + " · ".join(tail)) if tail else ""
-    return f"- **[{label}]({url})** — {desc}{meta}"
+    return f"[{label}]({url})"
 
 items = [card(r) for r in repos]
-block = f"{START}\n" + "\n".join(items) + f"\n{END}"
+block = " · ".join(items)
 
 # ---- metrics line -------------------------------------------------------
 all_repos = api(f"/users/{USER}/repos?per_page=100&type=public")
@@ -107,10 +106,10 @@ def note_line(meta, path):
     title = meta.get("title", "Untitled")
     date = meta.get("date", "")
     summary = meta.get("summary", "")
-    return f'- *{date}* — [{title}]({path})'
+    return f"[{title}]({path})"
 
 top_notes = entries[:3]
-notes_block = "\n".join(note_line(m, f) for m, f in top_notes) or "_No notes yet._"
+notes_block = " · ".join(note_line(m, f) for m, f in top_notes) or "_No notes yet._"
 
 # essays index
 index = ["# Notes\n", "<sub>Short pieces on tools, time and legibility.</sub>\n"]
@@ -121,12 +120,7 @@ index.append("")
 open("essays/README.md", "w", encoding="utf-8").write("\n".join(index))
 
 src = open(README, encoding="utf-8").read()
-if START not in src or END not in src:
-    raise SystemExit("markers not found in README")
-new = re.sub(re.escape(START) + r".*?" + re.escape(END), block, src, flags=re.S)
-new = new.replace("<!-- METRICS -->", metrics)
-new = re.sub(r"<!-- NOTES:START -->.*?<!-- NOTES:END -->",
-             f"<!-- NOTES:START -->\n{notes_block}\n<!-- NOTES:END -->",
-             new, flags=re.S)
+new = re.sub(r"<!--PROJECTS-->", block, src)
+new = re.sub(r"<!--NOTES-->", notes_block, new)
 open(README, "w", encoding="utf-8").write(new)
 print(f"updated with {len(repos)} project(s)")
