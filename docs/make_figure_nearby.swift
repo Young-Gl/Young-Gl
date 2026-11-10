@@ -35,9 +35,6 @@ ring(190, width: 1.0, alpha: 0.75)
 ring(120, width: 1.0, alpha: 0.30, dashed: true)
 ring(55,  width: 1.2, alpha: 0.85)
 
-// centre dot
-ink.withAlphaComponent(0.9).setFill()
-NSBezierPath(ovalIn: NSRect(x: cx - 3, y: cy - 3, width: 6, height: 6)).fill()
 
 func mono(_ s: String, centeredAt x: CGFloat, _ y: CGFloat, _ size: CGFloat, _ color: NSColor) {
     let a = NSAttributedString(string: s, attributes: [
@@ -49,10 +46,20 @@ func mono(_ s: String, centeredAt x: CGFloat, _ y: CGFloat, _ size: CGFloat, _ c
 
 mono("WORLD", centeredAt: cx, cy + 190 + 14, 9, ink.withAlphaComponent(0.6))
 mono("NEARBY", centeredAt: cx, cy + 120 + 12, 9, faint)
-mono("FAMILY", centeredAt: cx, cy - 16, 9, ink.withAlphaComponent(0.85))
+mono("FAMILY", centeredAt: cx, cy - 4, 9, ink.withAlphaComponent(0.85))
 
-// side note for the fading ring
-mono("THINNING", centeredAt: cx + 330, cy + 40, 9, faint)
+// side note for the fading ring, with a leader
+let ly: CGFloat = cy + 60
+let lx0: CGFloat = cx + 120 * cos(0.5)
+let lead = NSBezierPath()
+lead.move(to: NSPoint(x: lx0, y: cy + 120 * sin(0.5)))
+lead.line(to: NSPoint(x: cx + 300, y: ly))
+lead.lineWidth = 0.8
+var pat: [CGFloat] = [3, 4]
+lead.setLineDash(&pat, count: 2, phase: 0)
+faint.withAlphaComponent(0.9).setStroke()
+lead.stroke()
+mono("THINNING", centeredAt: cx + 360, ly - 4, 9, faint)
 
 img.unlockFocus()
 
