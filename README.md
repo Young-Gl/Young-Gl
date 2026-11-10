@@ -23,20 +23,22 @@
 
 ### Work
 
+<!-- PROJECTS:START -->
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h4>Fluxa</h4>
-      <p><sub>Live power draw in your menu bar — actual watts, not the charger's rating — and every device battery on your desktop.</sub></p>
-      <p><sub><a href="https://github.com/Young-Gl/Fluxa-Mac">Repository</a> &nbsp;·&nbsp; <a href="https://github.com/Young-Gl/Fluxa-Mac/releases/latest">Download</a></sub></p>
+      <h4><a href="https://github.com/Young-Gl/Fluxa-Mac">Fluxa</a></h4>
+      <p><sub>Native Mac power readings and device batteries, with desktop widgets</sub></p>
+      <p><sub><a href="https://github.com/Young-Gl/Fluxa-Mac">Repository</a> · ★ 1</sub></p>
     </td>
     <td width="50%" valign="top">
-      <h4>Backup Control</h4>
-      <p><sub>A native face for restic: encrypted, incremental backups to OneDrive, with sizes and time estimates before every run.</sub></p>
-      <p><sub><a href="https://github.com/Young-Gl/backup-control">Repository</a> &nbsp;·&nbsp; <a href="https://github.com/Young-Gl/backup-control/releases/latest">Download</a></sub></p>
+      <h4><a href="https://github.com/Young-Gl/backup-control">Backup Control</a></h4>
+      <p><sub>Native macOS GUI for restic + rclone encrypted incremental backups to OneDrive</sub></p>
+      <p><sub><a href="https://github.com/Young-Gl/backup-control">Repository</a> &nbsp;·&nbsp; <a href="https://github.com/Young-Gl/backup-control/releases/latest">Download</a> · ★ 1</sub></p>
     </td>
   </tr>
 </table>
+<!-- PROJECTS:END -->
 
 <br>
 
