@@ -100,7 +100,7 @@ def read_meta(path):
 
 files = [f for f in glob.glob("essays/*.md") if not f.endswith("essays/README.md")]
 entries = sorted(((read_meta(f), f) for f in files),
-                 key=lambda e: e[0].get("date", ""), reverse=True)
+                 key=lambda e: (e[0].get("date", ""), e[1]), reverse=True)
 
 def note_line(meta, path):
     title = meta.get("title", "Untitled")
